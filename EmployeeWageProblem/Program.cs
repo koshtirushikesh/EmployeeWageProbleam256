@@ -12,7 +12,6 @@ namespace EmployeeWageProblem
         {
             Employee employee= new Employee();
             employee.CalculateDailyWage();
-            
 
             Console.ReadLine();
         }
