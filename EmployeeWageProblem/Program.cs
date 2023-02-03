@@ -11,7 +11,7 @@ namespace EmployeeWageProblem
         static void Main(string[] args)
         {
             Employee employee= new Employee();
-            employee.CalculateDailyWage();
+            employee.CalculateMonthlyWage();
 
             Console.ReadLine();
         }
