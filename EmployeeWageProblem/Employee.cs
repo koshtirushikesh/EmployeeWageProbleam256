@@ -51,6 +51,30 @@ namespace EmployeeWageProblem
             Console.WriteLine("Total Employee Wage is : " + TotalWage);
         }
 
+        public void CalculateWageTillCondition()
+        {
+            int TotalWage = 0;
+            int TotalWorkingHours = 0;
+            int TotalWorkingDays = 0;
+            int MaxOfWorkingDays = 20;
+            int MaxOfWorkingHours = 100;
+            int WagePerHour = 20;
+            int WorkingHour = 0;
+
+            while (TotalWorkingDays < MaxOfWorkingDays && TotalWorkingHours < MaxOfWorkingHours)
+            {
+                TotalWorkingDays++;
+                Random random= new Random();
+                int check =random.Next(3);
+
+                WorkingHour = GetWorkingHours(check);
+                TotalWorkingHours += WorkingHour;
+                int DailyWage = WagePerHour * WorkingHour;
+                Console.WriteLine(" Day :" + TotalWorkingDays + " Wage is: " + DailyWage);
+                TotalWage += DailyWage;
+            }
+            Console.WriteLine("Total Employee Wage is : " + TotalWage+" Total Employee Hours : "+TotalWorkingHours);
+        }
 
     }
 }
