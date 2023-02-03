@@ -10,20 +10,26 @@ namespace EmployeeWageProblem
     {
         public static int Attendance()
         {
-            int present = 1;
+            int FullTime = 1;
+            int PartTime = 2;
             int WorkingHour;
 
             Random random = new Random();
-            int check = random.Next(2);
+            int check = random.Next(3);
 
-            if (check == present)
+            if (check == FullTime)
             {
-                Console.WriteLine("Employee is Present");
+                Console.Write("Employee is Present for full Time");
                 WorkingHour = 8;
+            }
+            else if(check==PartTime)
+            {
+                Console.Write("Employee is Present for Part Time");
+                WorkingHour = 4;
             }
             else
             {
-                Console.WriteLine("Employee is Absent");
+                Console.Write("Employee is Absent");
                 WorkingHour = 0;
             }
 
