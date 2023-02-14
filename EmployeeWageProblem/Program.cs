@@ -11,7 +11,8 @@ namespace EmployeeWageProblem
         static void Main(string[] args)
         {
             Employee employee= new Employee();
-            employee.CalculateWageTillCondition();
+            employee.CalculateWageTillCondition("Dmart",150,25,10);
+            employee.CalculateWageTillCondition("relience", 100, 20, 30);
 
             Console.ReadLine();
         }
