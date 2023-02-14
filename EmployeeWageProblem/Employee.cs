@@ -25,32 +25,6 @@ namespace EmployeeWageProblem
             return WorkingHour;
         }
 
-        public int CalculateDailyWage()
-        {
-            Random random = new Random();
-            int check = random.Next(3);
-
-            int WagePerHour = 20;
-            int DailyWage = 0;
-
-            int WorkingHour = GetWorkingHours(check);
-            
-            DailyWage = WagePerHour * WorkingHour;
-            Console.WriteLine(" Daily Wage is : " + DailyWage);
-            return DailyWage;
-        }
-
-        public void CalculateMonthlyWage()
-        {
-            int TotalWage = 0;
-            for (int i = 0; i < 20; i++)
-            {
-                Console.Write("Day: " + i + " ");
-                TotalWage += CalculateDailyWage();
-            }
-            Console.WriteLine("Total Employee Wage is : " + TotalWage);
-        }
-
         public void CalculateWageTillCondition()
         {
             int TotalWage = 0;
