@@ -9,25 +9,18 @@ namespace EmployeeWageProblem
 {
     internal class Employee
     {
-        const int FullTime = 1;
-        const int PartTime = 2;
+        public const int FullTime = 1;
+        public const int PartTime = 2;
 
-        string Company;
-        int TotalWage = 0;
-        int TotalWorkingHours = 0;
-        int TotalWorkingDays = 0;
-        int WorkingHour = 0;
+        public int WorkingHour = 0;
+        public int MaxOfWorkingHours = 0;
+        public int MaxOfWorkingDays = 0;
+        public int WagePerHours = 0;
 
-        int MaxOfWorkingHours = 0;
-        int MaxOfWorkingDays = 0;
-        int WagePerHour = 0;
-        public Employee(string Company, int MaxOfWorkingHours, int MaxOfWorkingDays, int WagePerHour)
-        {
-            this.Company = Company;
-            this.MaxOfWorkingHours = MaxOfWorkingHours;
-            this.MaxOfWorkingDays = MaxOfWorkingDays;
-            this.WagePerHour = WagePerHour;
-        }
+        EmployeModel[] employesWageArray = new EmployeModel[5];
+        
+        int NoCompany = 0;
+
         public int GetWorkingHours(int check)
         {
             int WorkingHour;
@@ -40,31 +33,41 @@ namespace EmployeeWageProblem
             return WorkingHour;
         }
 
-        public void CalculateWageTillCondition()
+        public void CalculateWageTillCondition(string Company, int MaxOfWorkingHours, int MaxOfWorkingDays, int WagePerHour)
         {
-            while (TotalWorkingDays < MaxOfWorkingDays && TotalWorkingHours < MaxOfWorkingHours)
+            EmployeModel employe = new EmployeModel();
+            employe.Company= Company;
+            while (employe.TotalWorkingDays < MaxOfWorkingDays && employe.TotalWorkingHours < MaxOfWorkingHours)
             {
-                TotalWorkingDays++;
+                employe.TotalWorkingDays++;
                 Random random = new Random();
                 int check = random.Next(3);
 
                 WorkingHour = GetWorkingHours(check);
-                TotalWorkingHours += WorkingHour;
+                employe.TotalWorkingHours += WorkingHour;
                 int DailyWage = WagePerHour * WorkingHour;
-                Console.WriteLine(" Day :" + TotalWorkingDays + " Wage is: " + DailyWage);
-                TotalWage += DailyWage;
+                Console.WriteLine(" Day :" + employe.TotalWorkingDays + " Wage is: " + DailyWage);
+                employe.TotalWage += DailyWage;
             }
-            Console.WriteLine(" \nEmploye Wage for Company: " + Company);
-            Console.WriteLine("Total Employee Wage is : " + TotalWage + " Total Employee Hours : " + TotalWorkingHours + "\n");
+            Console.WriteLine(" \nEmploye Wage for Company: " + employe.Company);
+            Console.WriteLine("Total Employee Wage is : " + employe.TotalWage + " Total Employee Hours : " + employe.TotalWorkingHours + "\n");
+            SaveFunction(employe);
         }
-
-        public string ToString()
-        { 
-            return 
-                "\n *********** Company  : " + Company +
-                "\n Total Employee Wage  : " + TotalWage +
-                "\n Total Employee Hours : " + TotalWorkingHours;
+        public void SaveFunction(EmployeModel employe)
+        {
+            employesWageArray[NoCompany] = employe;
+            NoCompany++;
         }
-
+        public void Display()
+        {
+            for (int i = 0; i < NoCompany; i++)
+            {
+                Console.WriteLine(
+                "\n *********** Company  : " + employesWageArray[i].Company +
+                "\n Total Employee Wage  : " + employesWageArray[i].TotalWage +
+                "\n Total Employee Hours : " + employesWageArray[i].TotalWorkingHours +
+                "\n Total Employee Days  : " + employesWageArray[i].TotalWorkingDays);
+            }
+        }
     }
 }
