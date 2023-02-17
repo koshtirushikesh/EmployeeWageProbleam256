@@ -10,10 +10,12 @@ namespace EmployeeWageProblem
     {
         static void Main(string[] args)
         {
-            Employee employee= new Employee();
-            employee.CalculateWageTillCondition("Dmart",150,25,10);
-            employee.CalculateWageTillCondition("relience", 100, 20, 30);
-
+            Employee dmart = new Employee("Dmart", 150, 25, 10);
+            Employee relince= new Employee("relience", 100, 20, 30);
+            dmart.CalculateWageTillCondition();
+            relince.CalculateWageTillCondition();
+            Console.WriteLine(dmart.ToString());
+            Console.WriteLine(relince.ToString());
             Console.ReadLine();
         }
     }

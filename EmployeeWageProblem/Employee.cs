@@ -9,30 +9,39 @@ namespace EmployeeWageProblem
 {
     internal class Employee
     {
+        const int FullTime = 1;
+        const int PartTime = 2;
 
+        string Company;
+        int TotalWage = 0;
+        int TotalWorkingHours = 0;
+        int TotalWorkingDays = 0;
+        int WorkingHour = 0;
+
+        int MaxOfWorkingHours = 0;
+        int MaxOfWorkingDays = 0;
+        int WagePerHour = 0;
+        public Employee(string Company, int MaxOfWorkingHours, int MaxOfWorkingDays, int WagePerHour)
+        {
+            this.Company = Company;
+            this.MaxOfWorkingHours = MaxOfWorkingHours;
+            this.MaxOfWorkingDays = MaxOfWorkingDays;
+            this.WagePerHour = WagePerHour;
+        }
         public int GetWorkingHours(int check)
         {
-            const int FullTime = 1;
-            const int PartTime = 2;
             int WorkingHour;
-
             switch (check)
             {
                 case FullTime: WorkingHour = 8; break;
                 case PartTime: WorkingHour = 4; break;
-
                 default: WorkingHour = 0; break;
             }
             return WorkingHour;
         }
 
-        public void CalculateWageTillCondition(string Company, int MaxOfWorkingHours, int MaxOfWorkingDays, int WagePerHour)
+        public void CalculateWageTillCondition()
         {
-            int TotalWage = 0;
-            int TotalWorkingHours = 0;
-            int TotalWorkingDays = 0;
-            int WorkingHour = 0;
-
             while (TotalWorkingDays < MaxOfWorkingDays && TotalWorkingHours < MaxOfWorkingHours)
             {
                 TotalWorkingDays++;
@@ -47,6 +56,14 @@ namespace EmployeeWageProblem
             }
             Console.WriteLine(" \nEmploye Wage for Company: " + Company);
             Console.WriteLine("Total Employee Wage is : " + TotalWage + " Total Employee Hours : " + TotalWorkingHours + "\n");
+        }
+
+        public string ToString()
+        { 
+            return 
+                "\n *********** Company  : " + Company +
+                "\n Total Employee Wage  : " + TotalWage +
+                "\n Total Employee Hours : " + TotalWorkingHours;
         }
 
     }
