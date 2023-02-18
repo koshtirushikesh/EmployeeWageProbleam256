@@ -13,6 +13,4 @@ namespace EmployeeWageProblem
         void SaveFunction(EmployeModel employee);
         void Display();
     }
-
-
 }

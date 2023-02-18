@@ -13,8 +13,8 @@ namespace EmployeeWageProblem
             Employee employee = new Employee();
             employee.CalculateWageTillCondition("Dmart", 150, 25, 10);
             employee.CalculateWageTillCondition("relience", 100, 20, 30);
-          
-            Console.WriteLine("**** All Employee Wage Stored in List ****");
+
+            Console.WriteLine("******* All Employee");
             employee.Display();
 
             Console.ReadLine();

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeWageProblem
 {
-    internal class Employee:IEmpWageBuilder
+    internal class Employee : IEmpWageBuilder
     {
         public const int FullTime = 1;
         public const int PartTime = 2;
@@ -34,7 +34,7 @@ namespace EmployeeWageProblem
         public void CalculateWageTillCondition(string Company, int MaxOfWorkingHours, int MaxOfWorkingDays, int WagePerHour)
         {
             EmployeModel employe = new EmployeModel();
-            employe.Company= Company;
+            employe.Company = Company;
             while (employe.TotalWorkingDays < MaxOfWorkingDays && employe.TotalWorkingHours < MaxOfWorkingHours)
             {
                 employe.TotalWorkingDays++;
@@ -62,10 +62,10 @@ namespace EmployeeWageProblem
             foreach (var i in employesWageList)
             {
                 Console.WriteLine(
-                "\n *********** Company  : " + i.Company +
-                "\n Total Employee Wage  : " + i.TotalWage +
-                "\n Total Employee Hours : " + i.TotalWorkingHours +
-                "\n Total Employee Days  : " + i.TotalWorkingDays);
+            "\n *********** Company  : " + i.Company +
+            "\n Total Employee Wage  : " + i.TotalWage +
+            "\n Total Employee Hours : " + i.TotalWorkingHours +
+            "\n Total Employee Days  : " + i.TotalWorkingDays);
             }
         }
     }
