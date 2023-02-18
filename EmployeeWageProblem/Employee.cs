@@ -17,9 +17,7 @@ namespace EmployeeWageProblem
         public int MaxOfWorkingDays = 0;
         public int WagePerHours = 0;
 
-        EmployeModel[] employesWageArray = new EmployeModel[5];
-        
-        int NoCompany = 0;
+        List<EmployeModel> employesWageList = new List<EmployeModel>();
 
         public int GetWorkingHours(int check)
         {
@@ -55,18 +53,17 @@ namespace EmployeeWageProblem
         }
         public void SaveFunction(EmployeModel employe)
         {
-            employesWageArray[NoCompany] = employe;
-            NoCompany++;
+            employesWageList.Add(employe);
         }
         public void Display()
         {
-            for (int i = 0; i < NoCompany; i++)
+            foreach (var i in employesWageList)
             {
                 Console.WriteLine(
-                "\n *********** Company  : " + employesWageArray[i].Company +
-                "\n Total Employee Wage  : " + employesWageArray[i].TotalWage +
-                "\n Total Employee Hours : " + employesWageArray[i].TotalWorkingHours +
-                "\n Total Employee Days  : " + employesWageArray[i].TotalWorkingDays);
+                "\n *********** Company  : " + i.Company +
+                "\n Total Employee Wage  : " + i.TotalWage +
+                "\n Total Employee Hours : " + i.TotalWorkingHours +
+                "\n Total Employee Days  : " + i.TotalWorkingDays);
             }
         }
     }

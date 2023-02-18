@@ -14,7 +14,7 @@ namespace EmployeeWageProblem
             employee.CalculateWageTillCondition("Dmart", 150, 25, 10);
             employee.CalculateWageTillCondition("relience", 100, 20, 30);
           
-            Console.WriteLine("All Employee Wage ");
+            Console.WriteLine("**** All Employee Wage Stored in List ****");
             employee.Display();
 
             Console.ReadLine();
