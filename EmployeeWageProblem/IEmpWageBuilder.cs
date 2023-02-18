@@ -11,6 +11,6 @@ namespace EmployeeWageProblem
         int GetWorkingHours(int check);
         void CalculateWageTillCondition(string Company, int MaxOfWorkingHours, int MaxOfWorkingDays, int WagePerHour);
         void SaveFunction(EmployeModel employee);
-        void Display();
+        void Display(string name);
     }
 }

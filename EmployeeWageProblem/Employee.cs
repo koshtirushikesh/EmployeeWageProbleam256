@@ -57,15 +57,18 @@ namespace EmployeeWageProblem
             employesWageList.Add(employe);
         }
 
-        public void Display()
+        public void Display(string name)
         {
             foreach (var i in employesWageList)
             {
-                Console.WriteLine(
-            "\n *********** Company  : " + i.Company +
-            "\n Total Employee Wage  : " + i.TotalWage +
-            "\n Total Employee Hours : " + i.TotalWorkingHours +
-            "\n Total Employee Days  : " + i.TotalWorkingDays);
+                if (i.Company.Equals(name))
+                {
+                    Console.WriteLine(
+                        "\n *********** Company  : " + i.Company +
+                        "\n Total Employee Wage  : " + i.TotalWage +
+                        "\n Total Employee Hours : " + i.TotalWorkingHours +
+                        "\n Total Employee Days  : " + i.TotalWorkingDays);
+                }
             }
         }
     }
