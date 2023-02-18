@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeWageProblem
 {
-    internal class Employee
+    internal class Employee:IEmpWageBuilder
     {
         public const int FullTime = 1;
         public const int PartTime = 2;
