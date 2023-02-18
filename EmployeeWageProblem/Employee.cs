@@ -51,10 +51,12 @@ namespace EmployeeWageProblem
             Console.WriteLine("Total Employee Wage is : " + employe.TotalWage + " Total Employee Hours : " + employe.TotalWorkingHours + "\n");
             SaveFunction(employe);
         }
+
         public void SaveFunction(EmployeModel employe)
         {
             employesWageList.Add(employe);
         }
+
         public void Display()
         {
             foreach (var i in employesWageList)
